@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -10,6 +10,9 @@
     <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
     <PublishSingleFile>true</PublishSingleFile>
     <PublishTrimmed>true</PublishTrimmed>
+    <Authors>Benjamin Höglinger-Stelzer</Authors>
+    <Company>Nefarius Software Solutions e.U.</Company>
+    <Copyright>(C) 2020 Benjamin Höglinger-Stelzer</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
