@@ -6,11 +6,11 @@ namespace vpatch
 {
     public class Options
     {
-        [Option("version", SetName = "version",
+        [Option("stamp-version", SetName = "version",
             HelpText = "The version information to set in the target file (e.g. \"1.2.0.0\").")]
         public Version Version { get; set; }
 
-        [Option("version-from-file", SetName = "version-file",
+        [Option("stamp-version-from-file", SetName = "version-file",
             HelpText = "A text file containing one line that gets parsed as the target version.")]
         public string TargetVersionFile { get; set; }
 
