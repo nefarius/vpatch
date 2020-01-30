@@ -13,10 +13,22 @@
     <Authors>Benjamin Höglinger-Stelzer</Authors>
     <Company>Nefarius Software Solutions e.U.</Company>
     <Copyright>(C) 2020 Benjamin Höglinger-Stelzer</Copyright>
+    <Description>Scripting utility to stamp version numbers to files.</Description>
+    <PackageProjectUrl>https://github.com/nefarius/vpatch</PackageProjectUrl>
+    <PackageIcon>favicon.png</PackageIcon>
+    <PackageIconUrl />
+    <RepositoryUrl>https://github.com/nefarius/vpatch</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.7.82" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="favicon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
