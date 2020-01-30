@@ -14,17 +14,17 @@ namespace vpatch
                 "[assembly: AssemblyFileVersion(\"{0}\")]");
 
         public static KeyValuePair<string, string> ResourceFileVersion =>
-            new KeyValuePair<string, string>(@"FILEVERSION *\d*,\d*,\d*,\d*", "FILEVERSION {0}");
+            new KeyValuePair<string, string>(@"FILEVERSION[ \\t]*\d*,\d*,\d*,\d*", "FILEVERSION {0}");
 
         public static KeyValuePair<string, string> ResourceProductVersion =>
-            new KeyValuePair<string, string>(@"PRODUCTVERSION *\d*,\d*,\d*,\d*", "PRODUCTVERSION {0}");
+            new KeyValuePair<string, string>(@"PRODUCTVERSION[ \\t]*\d*,\d*,\d*,\d*", "PRODUCTVERSION {0}");
 
         public static KeyValuePair<string, string> ResourceStringFileVersion
-            => new KeyValuePair<string, string>("^[ \\t]*VALUE *\"FileVersion\" *, *\"\\d*\\.\\d*\\.\\d*\\.\\d*\"",
+            => new KeyValuePair<string, string>("^[ \\t]*VALUE[ \\t]*\"FileVersion\"[ \\t]*,[ \\t]*\"\\d*\\.\\d*\\.\\d*\\.\\d*\"",
                 "VALUE \"FileVersion\", \"{0}\"");
 
         public static KeyValuePair<string, string> ResourceStringProductVersion
-            => new KeyValuePair<string, string>("^[ \\t]*VALUE *\"ProductVersion\" *, *\"\\d*\\.\\d*\\.\\d*\\.\\d*\"",
+            => new KeyValuePair<string, string>("^[ \\t]*VALUE[ \\t]*\"ProductVersion\"[ \\t]*,[ \\t]*\"\\d*\\.\\d*\\.\\d*\\.\\d*\"",
                 "VALUE \"ProductVersion\", \"{0}\"");
 
         public static KeyValuePair<string, string> VcxprojInfTimeStamp
