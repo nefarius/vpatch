@@ -46,7 +46,11 @@ Updates relevant version sections within a Windows Driver Project run on AppVeyo
 
 ```yaml
 before_build:
-- ps: Invoke-WebRequest "https://downloads.vigem.org/other/nefarius/vpatch/vpatch.exe" -OutFile vpatch.exe
+- ps: Invoke-WebRequest "https://github.com/nefarius/vpatch/releases/latest/download/vpatch.exe" -OutFile vpatch.exe
 - cmd: vpatch.exe --stamp-version "%APPVEYOR_BUILD_VERSION%" --target-file ".\sys\%APPVEYOR_PROJECT_NAME%.vcxproj" --vcxproj.inf-time-stamp
 - cmd: vpatch.exe --stamp-version "%APPVEYOR_BUILD_VERSION%" --target-file ".\sys\%APPVEYOR_PROJECT_NAME%.rc" --resource.file-version --resource.product-version
 ```
+
+## Remarks
+
+If you want to use the INF stamping functionality, your project file needs to have at least a static version number set (like `1.0.0.0`), the asterisk (`*`) will be ignored.
