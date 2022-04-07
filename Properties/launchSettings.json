@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "vpatch": {
+      "commandName": "Project",
+      "commandLineArgs": "--stamp-version \"3.3.3.3\""
+    }
+  }
+}

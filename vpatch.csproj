@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
 
@@ -10,6 +10,9 @@
     <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
     <PublishSingleFile>true</PublishSingleFile>
     <PublishTrimmed>true</PublishTrimmed>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <DebugType>None</DebugType>
+    <DebugSymbols>false</DebugSymbols>
     <Authors>Benjamin Höglinger-Stelzer</Authors>
     <Company>Nefarius Software Solutions e.U.</Company>
     <Copyright>(C) 2020 Benjamin Höglinger-Stelzer</Copyright>
