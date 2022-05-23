@@ -14,7 +14,7 @@ namespace vpatch
             HelpText = "A text file containing one line that gets parsed as the target version.")]
         public string TargetVersionFile { get; set; }
 
-        [Option("target-file",
+        [Option("target-file", Required = true,
             HelpText = "The target file to get parsed and modified.")]
         public string TargetFile { get; set; }
 
