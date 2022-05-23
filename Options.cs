@@ -38,6 +38,18 @@ namespace vpatch
             HelpText = "Update '<TimeStamp>' value in the specified Visual Studio project file.")]
         public bool OverwriteVcxprojInfTimeStamp { get; set; }
 
+        [Option("csproj.assembly-version",
+            HelpText = "Update 'AssemblyVersion' attribute in the specified .csproj project file.")]
+        public bool OverwriteNetCoreAssemblyVersion { get; set; }
+
+        [Option("csproj.file-version",
+            HelpText = "Update 'FileVersion' attribute in the specified .csproj project file.")]
+        public bool OverwriteNetCoreFileVersion { get; set; }
+
+        [Option("csproj.version",
+            HelpText = "Update 'Version' attribute in the specified .csproj project file.")]
+        public bool OverwriteNetCoreVersion { get; set; }
+
         public void UseVersionFromFile()
         {
             if (!File.Exists(TargetVersionFile)) return;
