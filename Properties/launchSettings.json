@@ -2,7 +2,7 @@
   "profiles": {
     "vpatch": {
       "commandName": "Project",
-      "commandLineArgs": "--stamp-version \"3.3.3.3\""
+      "commandLineArgs": "--stamp-version \"5.0.0\" --target-file \"D:\\Development\\GitHub\\DS4Windows\\CommonProjectProperties.targets\" --csproj.assembly-version --csproj.file-version --csproj.version"
     }
   }
 }
