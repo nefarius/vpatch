@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using Microsoft.Build.Construction;
 
 namespace vpatch
 {
@@ -23,6 +24,18 @@ namespace vpatch
         public static void RegexReplace(string path, string pattern, string replacement)
         {
             RegexReplace(path, pattern, replacement, Encoding.UTF8);
+        }
+
+        public static void PatchProjectFile(string path, string propertyName, string replacement)
+        {
+            var projectRootElement = ProjectRootElement.Open(path);
+
+            if (projectRootElement is null)
+                throw new IOException("Couldn't open project file for reading.");
+
+            projectRootElement.AddProperty(propertyName, replacement);
+
+            projectRootElement.Save();
         }
     }
 }
