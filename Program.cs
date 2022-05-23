@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using CommandLine;
+using Microsoft.Build.Locator;
 
 namespace vpatch;
 
@@ -7,6 +8,8 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        MSBuildLocator.RegisterDefaults();
+
         Parser.Default.ParseArguments<Options>(args)
             .WithParsed(o =>
             {
