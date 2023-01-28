@@ -2,6 +2,14 @@
 
 Versioning helper command line utility
 
+## Build
+
+Publish a public release with:
+
+```PowerShell
+dotnet publish -c Release -r win-x64 -p:PublishSingleFile=true --self-contained true
+```
+
 ## Usage examples
 
 ### Stamp `*.rc` files
