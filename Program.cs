@@ -1,9 +1,13 @@
-﻿using System.Text;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text;
+
 using CommandLine;
+
 using Microsoft.Build.Locator;
 
 namespace vpatch;
 
+[SuppressMessage("ReSharper", "ClassNeverInstantiated.Global")]
 internal class Program
 {
     private static void Main(string[] args)
@@ -16,12 +20,16 @@ internal class Program
                 o.UseVersionFromFile();
 
                 if (o.OverwriteAssemblyVersion)
+                {
                     TextFileHelper.RegexReplace(o.TargetFile, Patterns.AssemblyVersion.Key,
                         string.Format(Patterns.AssemblyVersion.Value, o.Version));
+                }
 
                 if (o.OverwriteAssemblyFileVersion)
+                {
                     TextFileHelper.RegexReplace(o.TargetFile, Patterns.AssemblyFileVersion.Key,
                         string.Format(Patterns.AssemblyFileVersion.Value, o.Version));
+                }
 
                 if (o.OverwriteResourceFileVersion)
                 {
@@ -43,17 +51,25 @@ internal class Program
                 }
 
                 if (o.OverwriteVcxprojInfTimeStamp)
+                {
                     TextFileHelper.RegexReplace(o.TargetFile, Patterns.VcxprojInfTimeStamp.Key,
                         string.Format(Patterns.VcxprojInfTimeStamp.Value, o.Version));
+                }
 
                 if (o.OverwriteNetCoreAssemblyVersion)
+                {
                     TextFileHelper.PatchProjectFile(o.TargetFile, "AssemblyVersion", o.Version.ToString());
+                }
 
                 if (o.OverwriteNetCoreFileVersion)
+                {
                     TextFileHelper.PatchProjectFile(o.TargetFile, "FileVersion", o.Version.ToString());
+                }
 
                 if (o.OverwriteNetCoreVersion)
+                {
                     TextFileHelper.PatchProjectFile(o.TargetFile, "Version", o.Version.ToString());
+                }
             });
     }
 }

@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+
 using Microsoft.Build.Construction;
 
 namespace vpatch;
@@ -12,7 +13,7 @@ public static class TextFileHelper
     {
         string content;
 
-        using (var reader = new StreamReader(path, encoding))
+        using (StreamReader reader = new(path, encoding))
         {
             content = reader.ReadToEnd();
         }
@@ -29,10 +30,12 @@ public static class TextFileHelper
 
     public static void PatchProjectFile(string projectFile, string propertyName, string replacement)
     {
-        var projectRootElement = ProjectRootElement.Open(projectFile);
+        ProjectRootElement projectRootElement = ProjectRootElement.Open(projectFile);
 
         if (projectRootElement is null)
+        {
             throw new IOException("Couldn't open project file for reading.");
+        }
 
         try
         {
