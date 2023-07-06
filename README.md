@@ -1,3 +1,5 @@
+<img src="src/favicon.png" align="right" />
+
 # vpatch
 
 Versioning helper command line utility
