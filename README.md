@@ -1,4 +1,4 @@
-<img src="src/favicon.png" align="right" />
+<img src="assets/favicon_128x128.png" align="right" />
 
 # vpatch
 
