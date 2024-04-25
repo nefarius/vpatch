@@ -56,9 +56,9 @@ Updates relevant version sections within a Windows Driver Project run on AppVeyo
 
 ```yaml
 before_build:
-- ps: Invoke-WebRequest "https://github.com/nefarius/vpatch/releases/latest/download/vpatch.exe" -OutFile vpatch.exe
-- cmd: vpatch.exe --stamp-version "%APPVEYOR_BUILD_VERSION%" --target-file ".\sys\%APPVEYOR_PROJECT_NAME%.vcxproj" --vcxproj.inf-time-stamp
-- cmd: vpatch.exe --stamp-version "%APPVEYOR_BUILD_VERSION%" --target-file ".\sys\%APPVEYOR_PROJECT_NAME%.rc" --resource.file-version --resource.product-version
+- cmd: dotnet tool install --global Nefarius.Tools.Vpatch
+- cmd: vpatch --stamp-version "%APPVEYOR_BUILD_VERSION%" --target-file ".\sys\%APPVEYOR_PROJECT_NAME%.vcxproj" --vcxproj.inf-time-stamp
+- cmd: vpatch --stamp-version "%APPVEYOR_BUILD_VERSION%" --target-file ".\sys\%APPVEYOR_PROJECT_NAME%.rc" --resource.file-version --resource.product-version
 ```
 
 ## Remarks
