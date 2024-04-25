@@ -2,7 +2,7 @@
 
 # vpatch
 
-[![.NET](https://github.com/nefarius/vpatch/actions/workflows/dotnet.yml/badge.svg)](https://github.com/nefarius/vpatch/actions/workflows/dotnet.yml)
+[![.NET](https://github.com/nefarius/vpatch/actions/workflows/build.yml/badge.svg)](https://github.com/nefarius/vpatch/actions/workflows/build.yml)
 
 Versioning helper command line utility
 
