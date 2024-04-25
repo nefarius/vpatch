@@ -6,6 +6,7 @@
     <ApplicationIcon>favicon.ico</ApplicationIcon>
     <Version>2.1.0</Version>
     <LangVersion>latest</LangVersion>
+      <OutputPath>$(SolutionDir)bin\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -25,6 +26,9 @@
     <PackAsTool>true</PackAsTool>
     <IsPackable>true</IsPackable>
     <PackageId>Nefarius.Tools.Vpatch</PackageId>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
