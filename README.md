@@ -28,7 +28,7 @@ Stamp with version from AppVeyor:
 vpatch --stamp-version "%APPVEYOR_BUILD_VERSION%" --target-file "%solution%\ExampleProject\ExampleProject.rc" --resource.file-version --resource.product-version
 ```
 
-### Stamp .NET `AssemblyInfo`
+### Stamp .NET Framework `AssemblyInfo`
 
 Read version string from file `version.txt` and replace both `AssemblyVersion` and `AssemblyFileVersion` attributes in `AssemblyInfo.cs`:
 
