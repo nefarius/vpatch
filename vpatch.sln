@@ -12,10 +12,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 		.github\workflows\build.yml = .github\workflows\build.yml
 		.github\dependabot.yml = .github\dependabot.yml
-		global.json = global.json
 		LICENSE = LICENSE
 		.github\workflows\publish-to-nuget.yml = .github\workflows\publish-to-nuget.yml
 		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{83961645-DD45-4661-92C2-477E9219FB11}"
+	ProjectSection(SolutionItems) = preProject
+		examples\driver.vcxproj = examples\driver.vcxproj
 	EndProjectSection
 EndProject
 Global
@@ -34,5 +38,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9364EDC8-7BC3-468F-8E3D-51EA2218C1E7}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{83961645-DD45-4661-92C2-477E9219FB11} = {738C3B40-E30E-4176-BB02-4209E509830B}
 	EndGlobalSection
 EndGlobal
