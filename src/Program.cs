@@ -58,8 +58,7 @@ internal class Program
 
                 if (o.OverwriteVcxprojInfTimeStamp)
                 {
-                    TextFileHelper.RegexReplace(o.TargetFile, Patterns.VcxprojInfTimeStamp.Key,
-                        string.Format(Patterns.VcxprojInfTimeStamp.Value, o.Version));
+                    TextFileHelper.PatchInfFile(o.TargetFile, o.Version);
                 }
                 
                 #endregion

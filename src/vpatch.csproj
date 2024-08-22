@@ -1,54 +1,55 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <ApplicationIcon>favicon.ico</ApplicationIcon>
-    <Version>2.1.0</Version>
-    <LangVersion>latest</LangVersion>
-      <OutputPath>$(SolutionDir)bin\</OutputPath>
-  </PropertyGroup>
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ApplicationIcon>favicon.ico</ApplicationIcon>
+        <Version>2.1.0</Version>
+        <LangVersion>latest</LangVersion>
+        <OutputPath>$(SolutionDir)bin\</OutputPath>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
 
-  <PropertyGroup>
-    <MinVerTagPrefix>v</MinVerTagPrefix>
-  </PropertyGroup>
+    <PropertyGroup>
+        <MinVerTagPrefix>v</MinVerTagPrefix>
+    </PropertyGroup>
 
-  <PropertyGroup>
-    <Authors>Benjamin Höglinger-Stelzer</Authors>
-    <Company>Nefarius Software Solutions e.U.</Company>
-    <Copyright>(C) 2020-2024 Benjamin Höglinger-Stelzer</Copyright>
-    <Description>Scripting utility to stamp version numbers to files.</Description>
-    <PackageProjectUrl>https://github.com/nefarius/vpatch</PackageProjectUrl>
-    <PackageIcon>favicon.png</PackageIcon>
-    <PackageIconUrl />
-    <RepositoryUrl>https://github.com/nefarius/vpatch</RepositoryUrl>
-    <ToolCommandName>vpatch</ToolCommandName>
-    <PackAsTool>true</PackAsTool>
-    <IsPackable>true</IsPackable>
-    <PackageId>Nefarius.Tools.Vpatch</PackageId>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-  </PropertyGroup>
+    <PropertyGroup>
+        <Authors>Benjamin Höglinger-Stelzer</Authors>
+        <Company>Nefarius Software Solutions e.U.</Company>
+        <Copyright>(C) 2020-2024 Benjamin Höglinger-Stelzer</Copyright>
+        <Description>Scripting utility to stamp version numbers to files.</Description>
+        <PackageProjectUrl>https://github.com/nefarius/vpatch</PackageProjectUrl>
+        <PackageIcon>favicon.png</PackageIcon>
+        <PackageIconUrl/>
+        <RepositoryUrl>https://github.com/nefarius/vpatch</RepositoryUrl>
+        <ToolCommandName>vpatch</ToolCommandName>
+        <PackAsTool>true</PackAsTool>
+        <IsPackable>true</IsPackable>
+        <PackageId>Nefarius.Tools.Vpatch</PackageId>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="CommandLineParser" Version="2.9.1" />
-    <PackageReference Include="Microsoft.Build" Version="17.11.4" ExcludeAssets="runtime" />
-    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.11.4" ExcludeAssets="runtime" />
-    <PackageReference Include="Microsoft.Build.Locator">
-      <Version>1.7.8</Version>
-    </PackageReference>
-    <PackageReference Include="MinVer" Version="5.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="CommandLineParser" Version="2.9.1"/>
+        <PackageReference Include="Microsoft.Build" Version="17.11.4" ExcludeAssets="runtime"/>
+        <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.11.4" ExcludeAssets="runtime"/>
+        <PackageReference Include="Microsoft.Build.Locator">
+            <Version>1.7.8</Version>
+        </PackageReference>
+        <PackageReference Include="MinVer" Version="5.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
 
-  <ItemGroup>
-    <None Include="favicon.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+    <ItemGroup>
+        <None Include="favicon.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
 
 </Project>

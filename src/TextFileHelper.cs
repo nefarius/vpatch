@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -30,7 +31,7 @@ public static class TextFileHelper
 
     public static void PatchProjectFile(string projectFile, string propertyName, string replacement)
     {
-        ProjectRootElement projectRootElement = ProjectRootElement.Open(projectFile);
+        ProjectRootElement? projectRootElement = ProjectRootElement.Open(projectFile);
 
         if (projectRootElement is null)
         {
@@ -46,6 +47,36 @@ public static class TextFileHelper
         catch (Exception ex)
         {
             throw new Exception("Failed to parse project file.", ex);
+        }
+    }
+
+    public static void PatchInfFile(string projectFile, Version version)
+    {
+        ProjectRootElement? root = ProjectRootElement.Open(projectFile);
+
+        if (root is null)
+        {
+            throw new IOException("Couldn't open project file for reading.");
+        }
+
+        foreach (ProjectItemDefinitionGroupElement itemDefinitionGroup in root.ItemDefinitionGroups)
+        {
+            ProjectItemDefinitionElement? infElement =
+                itemDefinitionGroup.ItemDefinitions.SingleOrDefault(element => element.ElementName.Equals("Inf"));
+
+            if (infElement is null)
+            {
+                continue;
+            }
+
+            if (infElement.Children.SingleOrDefault(element => element.ElementName.Equals("TimeStamp")) is ProjectMetadataElement timeStamp)
+            {
+                timeStamp.Value = version.ToString();
+            }
+            else
+            {
+                infElement.AddMetadata("TimeStamp", version.ToString());
+            }
         }
     }
 }

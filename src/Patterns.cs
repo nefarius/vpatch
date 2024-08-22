@@ -26,10 +26,4 @@ public static class Patterns
     public static KeyValuePair<string, string> ResourceStringProductVersion
         => new("^[ \\t]*VALUE[ \\t]*\"ProductVersion\"[ \\t]*,[ \\t]*\"\\d*\\.\\d*\\.\\d*\\.\\d*\"",
             "VALUE \"ProductVersion\", \"{0}\"");
-
-    public static KeyValuePair<string, string> VcxprojInfTimeStamp
-        =>
-            new(
-                "<Inf>(\\n|\\r|\\r\\n) *<TimeStamp>\\d*\\.\\d*\\.\\d*\\.\\d*<\\/TimeStamp>(\\n|\\r|\\r\\n) *<\\/Inf>",
-                "<Inf>\r\n      <TimeStamp>{0}</TimeStamp>\r\n    </Inf>");
 }
