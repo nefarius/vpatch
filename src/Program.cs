@@ -19,6 +19,8 @@ internal class Program
             {
                 o.UseVersionFromFile();
 
+                #region .NET Framework specific
+                
                 if (o.OverwriteAssemblyVersion)
                 {
                     TextFileHelper.RegexReplace(o.TargetFile, Patterns.AssemblyVersion.Key,
@@ -30,7 +32,11 @@ internal class Program
                     TextFileHelper.RegexReplace(o.TargetFile, Patterns.AssemblyFileVersion.Key,
                         string.Format(Patterns.AssemblyFileVersion.Value, o.Version));
                 }
+                
+                #endregion
 
+                #region C++/Driver project specific
+                
                 if (o.OverwriteResourceFileVersion)
                 {
                     TextFileHelper.RegexReplace(o.TargetFile, Patterns.ResourceFileVersion.Key,
@@ -55,6 +61,10 @@ internal class Program
                     TextFileHelper.RegexReplace(o.TargetFile, Patterns.VcxprojInfTimeStamp.Key,
                         string.Format(Patterns.VcxprojInfTimeStamp.Value, o.Version));
                 }
+                
+                #endregion
+
+                #region .NET Core specific
 
                 if (o.OverwriteNetCoreAssemblyVersion)
                 {
@@ -70,6 +80,8 @@ internal class Program
                 {
                     TextFileHelper.PatchProjectFile(o.TargetFile, "Version", o.Version.ToString());
                 }
+
+                #endregion
             });
     }
 }
