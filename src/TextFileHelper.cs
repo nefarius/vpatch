@@ -10,6 +10,10 @@ namespace vpatch;
 
 public static class TextFileHelper
 {
+    private const string InfItemDefinition = "Inf";
+
+    private const string TimestampElementName = "TimeStamp";
+
     public static void RegexReplace(string path, string pattern, string replacement, Encoding encoding)
     {
         string content;
@@ -62,20 +66,21 @@ public static class TextFileHelper
         foreach (ProjectItemDefinitionGroupElement itemDefinitionGroup in root.ItemDefinitionGroups)
         {
             ProjectItemDefinitionElement infElement =
-                itemDefinitionGroup.ItemDefinitions.SingleOrDefault(element => element.ElementName.Equals("Inf")) ??
-                itemDefinitionGroup.AddItemDefinition("Inf");
+                itemDefinitionGroup.ItemDefinitions.SingleOrDefault(element =>
+                    element.ElementName.Equals(InfItemDefinition)) ??
+                itemDefinitionGroup.AddItemDefinition(InfItemDefinition);
 
-            if (infElement.Children.SingleOrDefault(element => element.ElementName.Equals("TimeStamp")) is
+            if (infElement.Children.SingleOrDefault(element => element.ElementName.Equals(TimestampElementName)) is
                 ProjectMetadataElement timeStamp)
             {
                 timeStamp.Value = version.ToString();
             }
             else
             {
-                infElement.AddMetadata("TimeStamp", version.ToString());
+                infElement.AddMetadata(TimestampElementName, version.ToString());
             }
         }
-        
+
         root.Save(projectFile);
     }
 }
