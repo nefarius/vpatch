@@ -61,15 +61,12 @@ public static class TextFileHelper
 
         foreach (ProjectItemDefinitionGroupElement itemDefinitionGroup in root.ItemDefinitionGroups)
         {
-            ProjectItemDefinitionElement? infElement =
-                itemDefinitionGroup.ItemDefinitions.SingleOrDefault(element => element.ElementName.Equals("Inf"));
+            ProjectItemDefinitionElement infElement =
+                itemDefinitionGroup.ItemDefinitions.SingleOrDefault(element => element.ElementName.Equals("Inf")) ??
+                itemDefinitionGroup.AddItemDefinition("Inf");
 
-            if (infElement is null)
-            {
-                continue;
-            }
-
-            if (infElement.Children.SingleOrDefault(element => element.ElementName.Equals("TimeStamp")) is ProjectMetadataElement timeStamp)
+            if (infElement.Children.SingleOrDefault(element => element.ElementName.Equals("TimeStamp")) is
+                ProjectMetadataElement timeStamp)
             {
                 timeStamp.Value = version.ToString();
             }
@@ -78,5 +75,7 @@ public static class TextFileHelper
                 infElement.AddMetadata("TimeStamp", version.ToString());
             }
         }
+        
+        root.Save(projectFile);
     }
 }
