@@ -16,6 +16,10 @@ public class Options
         HelpText = "The version information to set in the target file (e.g. \"1.2.0.0\").")]
     public Version Version { get; set; }
 
+    [Option("stamp-version-string", SetName = "version",
+        HelpText = "Arbitrary string version information to set in the target file (e.g. \"1.2.3-rc.1\"); should be combined with --stamp-version or --stamp-version-from-file.")]
+    public string VersionString { get; set; }
+
     [Option("stamp-version-from-file", SetName = "version-file",
         HelpText = "A text file containing one line that gets parsed as the target version.")]
     public string TargetVersionFile { get; set; }
