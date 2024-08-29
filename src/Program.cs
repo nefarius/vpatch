@@ -32,10 +32,12 @@ internal class Program
                     TextFileHelper.RegexReplace(o.TargetFile, Patterns.AssemblyFileVersion.Key,
                         string.Format(Patterns.AssemblyFileVersion.Value, o.Version));
                 }
-                
+
                 #endregion
 
                 #region C++/Driver project specific
+
+                string versionString = string.IsNullOrEmpty(o.VersionString) ? o.Version.ToString() : o.VersionString;
                 
                 if (o.OverwriteResourceFileVersion)
                 {
@@ -43,7 +45,7 @@ internal class Program
                         string.Format(Patterns.ResourceFileVersion.Value, o.Version.ToString().Replace('.', ',')),
                         Encoding.Default);
                     TextFileHelper.RegexReplace(o.TargetFile, Patterns.ResourceStringFileVersion.Key,
-                        string.Format(Patterns.ResourceStringFileVersion.Value, o.Version), Encoding.Default);
+                        string.Format(Patterns.ResourceStringFileVersion.Value, versionString), Encoding.Default);
                 }
 
                 if (o.OverwriteResourceProductVersion)
@@ -53,7 +55,7 @@ internal class Program
                             o.Version.ToString().Replace('.', ',')),
                         Encoding.Default);
                     TextFileHelper.RegexReplace(o.TargetFile, Patterns.ResourceStringProductVersion.Key,
-                        string.Format(Patterns.ResourceStringProductVersion.Value, o.Version), Encoding.Default);
+                        string.Format(Patterns.ResourceStringProductVersion.Value, versionString), Encoding.Default);
                 }
 
                 if (o.OverwriteVcxprojInfTimeStamp)
