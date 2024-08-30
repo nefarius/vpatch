@@ -20,6 +20,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{83961645-DD45-4661-92C2-477E9219FB11}"
 	ProjectSection(SolutionItems) = preProject
 		examples\driver.vcxproj = examples\driver.vcxproj
+		examples\vbus.rc = examples\vbus.rc
 	EndProjectSection
 EndProject
 Global
