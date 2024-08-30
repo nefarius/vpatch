@@ -14,16 +14,16 @@ public static class Patterns
             "[assembly: AssemblyFileVersion(\"{0}\")]");
 
     public static KeyValuePair<string, string> ResourceFileVersion =>
-        new(@"FILEVERSION[ \\t]*\d*,\d*,\d*,\d*", "FILEVERSION {0}");
+        new(@"FILEVERSION(?<spacing>[ \\t]*)\d*,\d*,\d*,\d*", "FILEVERSION${{spacing}}{0}");
 
     public static KeyValuePair<string, string> ResourceProductVersion =>
-        new(@"PRODUCTVERSION[ \\t]*\d*,\d*,\d*,\d*", "PRODUCTVERSION {0}");
+        new(@"PRODUCTVERSION(?<spacing>[ \\t]*)\d*,\d*,\d*,\d*", "PRODUCTVERSION${{spacing}}{0}");
 
     public static KeyValuePair<string, string> ResourceStringFileVersion
-        => new("^[ \\t]*VALUE[ \\t]*\"FileVersion\"[ \\t]*,[ \\t]*\"\\d*\\.\\d*\\.\\d*\\.\\d*\"",
-            "VALUE \"FileVersion\", \"{0}\"");
+        => new("^(?<indent>[ \\t]*)VALUE[ \\t]*\"FileVersion\"[ \\t]*,(?<spacing>[ \\t]*)\"\\d*\\.\\d*\\.\\d*\\.\\d*\"",
+            "${{indent}}VALUE \"FileVersion\",${{spacing}}\"{0}\"");
 
     public static KeyValuePair<string, string> ResourceStringProductVersion
-        => new("^[ \\t]*VALUE[ \\t]*\"ProductVersion\"[ \\t]*,[ \\t]*\"\\d*\\.\\d*\\.\\d*\\.\\d*\"",
-            "VALUE \"ProductVersion\", \"{0}\"");
+        => new("^(?<indent>[ \\t]*)VALUE[ \\t]*\"ProductVersion\"[ \\t]*,(?<spacing>[ \\t]*)\"\\d*\\.\\d*\\.\\d*\\.\\d*\"",
+            "${{indent}}VALUE \"ProductVersion\",${{spacing}}\"{0}\"");
 }
