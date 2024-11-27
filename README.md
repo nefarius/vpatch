@@ -1,7 +1,7 @@
 # <img src="assets/favicon_128x128.png" align="left" />vpatch
 
 [![.NET](https://github.com/nefarius/vpatch/actions/workflows/build.yml/badge.svg)](https://github.com/nefarius/vpatch/actions/workflows/build.yml)
-![Requirements](https://img.shields.io/badge/Requires-.NET%208.0-blue.svg)
+![Requirements](https://img.shields.io/badge/Requires-.NET%209.0-blue.svg)
 [![Nuget](https://img.shields.io/nuget/v/Nefarius.Tools.Vpatch)](https://www.nuget.org/packages/Nefarius.Tools.Vpatch/)
 [![Nuget](https://img.shields.io/nuget/dt/Nefarius.Tools.Vpatch)](https://www.nuget.org/packages/Nefarius.Tools.Vpatch/)
 
