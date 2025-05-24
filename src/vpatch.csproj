@@ -17,7 +17,7 @@
     <PropertyGroup>
         <Authors>Benjamin Höglinger-Stelzer</Authors>
         <Company>Nefarius Software Solutions e.U.</Company>
-        <Copyright>(C) 2020-2024 Benjamin Höglinger-Stelzer</Copyright>
+        <Copyright>(C) 2020-2025 Benjamin Höglinger-Stelzer</Copyright>
         <Description>Scripting utility to stamp version numbers to files.</Description>
         <PackageProjectUrl>https://github.com/nefarius/vpatch</PackageProjectUrl>
         <PackageIcon>favicon.png</PackageIcon>
