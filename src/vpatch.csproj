@@ -37,7 +37,7 @@
         <PackageReference Include="Microsoft.Build" Version="17.14.8" ExcludeAssets="runtime"/>
         <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.14.8" ExcludeAssets="runtime"/>
         <PackageReference Include="Microsoft.Build.Locator">
-            <Version>1.9.1</Version>
+            <Version>1.10.2</Version>
         </PackageReference>
         <PackageReference Include="MinVer" Version="6.0.0">
             <PrivateAssets>all</PrivateAssets>
